@@ -5,6 +5,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { LinearProgress } from '@mui/material';
 import MainPage from './main/MainPage';
+import CombinedReportPage from './reports/CombinedReportPage';
 import RouteReportPage from './reports/RouteReportPage';
 import ServerPage from './settings/ServerPage';
 import UsersPage from './settings/UsersPage';
@@ -49,6 +50,9 @@ import App from './App';
 import ChangeServerPage from './other/ChangeServerPage';
 import DevicesPage from './settings/DevicesPage';
 import ScheduledPage from './reports/ScheduledPage';
+import DeviceConnectionsPage from './settings/DeviceConnectionsPage';
+import GroupConnectionsPage from './settings/GroupConnectionsPage';
+import UserConnectionsPage from './settings/UserConnectionsPage';
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -115,6 +119,7 @@ const Navigation = () => {
           <Route path="attribute/:id" element={<ComputedAttributePage />} />
           <Route path="attribute" element={<ComputedAttributePage />} />
           <Route path="devices" element={<DevicesPage />} />
+          <Route path="device/:id/connections" element={<DeviceConnectionsPage />} />
           <Route path="device/:id" element={<DevicePage />} />
           <Route path="device" element={<DevicePage />} />
           <Route path="drivers" element={<DriversPage />} />
@@ -123,6 +128,7 @@ const Navigation = () => {
           <Route path="geofence/:id" element={<GeofencePage />} />
           <Route path="geofence" element={<GeofencePage />} />
           <Route path="groups" element={<GroupsPage />} />
+          <Route path="group/:id/connections" element={<GroupConnectionsPage />} />
           <Route path="group/:id" element={<GroupPage />} />
           <Route path="group" element={<GroupPage />} />
           <Route path="maintenances" element={<MaintenancesPage />} />
@@ -134,11 +140,13 @@ const Navigation = () => {
           <Route path="preferences" element={<PreferencesPage />} />
           <Route path="server" element={<ServerPage />} />
           <Route path="users" element={<UsersPage />} />
+          <Route path="user/:id/connections" element={<UserConnectionsPage />} />
           <Route path="user/:id" element={<UserPage />} />
           <Route path="user" element={<UserPage />} />
         </Route>
 
         <Route path="reports">
+          <Route path="combined" element={<CombinedReportPage />} />
           <Route path="chart" element={<ChartReportPage />} />
           <Route path="event" element={<EventReportPage />} />
           <Route path="route" element={<RouteReportPage />} />
